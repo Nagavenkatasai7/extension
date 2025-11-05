@@ -1,18 +1,13 @@
 // Configuration file for the extension
 const CONFIG = {
   // ============================================================================
-  // BACKEND API URL - IMPORTANT: UPDATE THIS AFTER DEPLOYING TO RENDER
+  // BACKEND API URL - PRODUCTION
   // ============================================================================
-  // For local development: 'http://localhost:3000'
-  // For production (Render): 'https://YOUR-APP-NAME.onrender.com'
-  //
-  // Steps to update:
-  // 1. Deploy backend to Render.com (see backend/RENDER_DEPLOYMENT_GUIDE.md)
-  // 2. Copy your Render URL (e.g., https://linkedin-extension-backend.onrender.com)
-  // 3. Replace the URL below with your production URL
-  // 4. Reload the extension in Chrome
+  // ✅ Updated with Render production URL
+  // Deployed: 2025-11-05
+  // Status: Live and running
   // ============================================================================
-  API_BASE_URL: 'http://localhost:3000',  // ⚠️ CHANGE THIS to your Render URL!
+  API_BASE_URL: 'https://extension-1-3zrr.onrender.com',  // ✅ Production URL
 
   // API Secret Key (optional, must match backend .env)
   API_SECRET_KEY: 'linkedin-ai-extension-2025-secure',
