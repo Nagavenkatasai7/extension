@@ -284,6 +284,19 @@ app.get('/health', (req, res) => {
   });
 });
 
+// Debug endpoint to check environment variables (REMOVE IN PRODUCTION!)
+app.get('/debug/env', (req, res) => {
+  res.json({
+    hasOpenRouterKey: !!process.env.OPENROUTER_API_KEY,
+    openRouterKeyLength: process.env.OPENROUTER_API_KEY ? process.env.OPENROUTER_API_KEY.length : 0,
+    openRouterKeyPrefix: process.env.OPENROUTER_API_KEY ? process.env.OPENROUTER_API_KEY.substring(0, 15) + '...' : 'NOT SET',
+    hasApiSecretKey: !!process.env.API_SECRET_KEY,
+    apiSecretKey: process.env.API_SECRET_KEY || 'NOT SET',
+    nodeEnv: process.env.NODE_ENV,
+    model: MODEL
+  });
+});
+
 // Main endpoint: Customize LinkedIn message template
 app.post('/api/customize-message', validateApiSecret, async (req, res) => {
   try {
