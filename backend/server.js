@@ -172,9 +172,11 @@ const openai = new OpenAI({
   apiKey: process.env.OPENROUTER_API_KEY,
   baseURL: 'https://openrouter.ai/api/v1',
   defaultHeaders: {
-    'HTTP-Referer': 'https://github.com/linkedin-message-customizer',
+    'HTTP-Referer': 'https://github.com/Nagavenkatasai7/extension',
     'X-Title': 'LinkedIn Message Customizer',
-  }
+  },
+  // Explicitly set dangerouslyAllowBrowser to true for OpenRouter compatibility
+  dangerouslyAllowBrowser: true
 });
 
 // Validate API key on startup
@@ -295,6 +297,34 @@ app.get('/debug/env', (req, res) => {
     nodeEnv: process.env.NODE_ENV,
     model: MODEL
   });
+});
+
+// Test endpoint to check OpenRouter API directly
+app.get('/debug/test-openrouter', async (req, res) => {
+  try {
+    console.log('🧪 Testing OpenRouter API...');
+    const completion = await openai.chat.completions.create({
+      model: 'openai/gpt-3.5-turbo',
+      messages: [{ role: 'user', content: 'Say "test successful" if you can read this.' }],
+      max_tokens: 50
+    });
+
+    res.json({
+      success: true,
+      message: 'OpenRouter API is working!',
+      response: completion.choices[0].message.content
+    });
+  } catch (error) {
+    console.error('❌ OpenRouter API test failed:', error);
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      status: error.status,
+      type: error.type,
+      code: error.code,
+      fullError: JSON.stringify(error, null, 2)
+    });
+  }
 });
 
 // Main endpoint: Customize LinkedIn message template
