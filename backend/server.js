@@ -286,17 +286,47 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Debug endpoint to check environment variables (REMOVE IN PRODUCTION!)
-app.get('/debug/env', (req, res) => {
-  res.json({
+// Debug endpoint to check environment variables and test OpenRouter (REMOVE IN PRODUCTION!)
+app.get('/debug/env', async (req, res) => {
+  const envInfo = {
     hasOpenRouterKey: !!process.env.OPENROUTER_API_KEY,
     openRouterKeyLength: process.env.OPENROUTER_API_KEY ? process.env.OPENROUTER_API_KEY.length : 0,
     openRouterKeyPrefix: process.env.OPENROUTER_API_KEY ? process.env.OPENROUTER_API_KEY.substring(0, 15) + '...' : 'NOT SET',
     hasApiSecretKey: !!process.env.API_SECRET_KEY,
     apiSecretKey: process.env.API_SECRET_KEY || 'NOT SET',
     nodeEnv: process.env.NODE_ENV,
-    model: MODEL
-  });
+    model: MODEL,
+    openRouterTest: null
+  };
+
+  // Test OpenRouter API if testApi query parameter is present
+  if (req.query.testApi === 'true') {
+    try {
+      console.log('🧪 Testing OpenRouter API...');
+      const completion = await openai.chat.completions.create({
+        model: 'openai/gpt-3.5-turbo',
+        messages: [{ role: 'user', content: 'Say "test successful"' }],
+        max_tokens: 20
+      });
+
+      envInfo.openRouterTest = {
+        success: true,
+        message: 'OpenRouter API is working!',
+        response: completion.choices[0].message.content
+      };
+    } catch (error) {
+      console.error('❌ OpenRouter API test failed:', error);
+      envInfo.openRouterTest = {
+        success: false,
+        error: error.message,
+        status: error.status,
+        type: error.type,
+        code: error.code
+      };
+    }
+  }
+
+  res.json(envInfo);
 });
 
 // Test endpoint to check OpenRouter API directly
