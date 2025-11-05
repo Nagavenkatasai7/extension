@@ -1,0 +1,74 @@
+# ============================================================================
+# RENDER.COM DEPLOYMENT CONFIGURATION
+# ============================================================================
+# This file defines how your service should be deployed on Render.com
+# Documentation: https://render.com/docs/yaml-spec
+# ============================================================================
+
+services:
+  # Web Service Configuration
+  - type: web
+    name: linkedin-extension-backend
+    runtime: node
+    env: node
+    
+    # Build Configuration
+    buildCommand: npm install
+    startCommand: npm start
+    
+    # Environment
+    envVars:
+      - key: NODE_ENV
+        value: production
+      
+      # These must be set manually in Render dashboard (secrets)
+      - key: OPENROUTER_API_KEY
+        sync: false  # Must be added manually in dashboard
+      
+      - key: API_SECRET
+        sync: false  # Must be added manually in dashboard
+    
+    # Health Check (optional but recommended)
+    healthCheckPath: /api/health
+    
+    # Auto-Deploy
+    autoDeploy: true
+    
+    # Plan (free tier)
+    plan: free
+    
+    # Region (choose closest to your users)
+    region: oregon  # Options: oregon, ohio, frankfurt, singapore
+    
+    # Disk (optional - for persistent storage)
+    # disk:
+    #   name: data
+    #   mountPath: /data
+    #   sizeGB: 1
+
+# ============================================================================
+# DEPLOYMENT INSTRUCTIONS
+# ============================================================================
+#
+# Option 1: Automatic Deployment with render.yaml
+# ------------------------------------------------
+# 1. Push this file to your Git repository
+# 2. In Render dashboard, click "New +" → "Blueprint"
+# 3. Connect your repository
+# 4. Render will auto-detect render.yaml and configure your service
+# 5. Manually add OPENROUTER_API_KEY and API_SECRET in Environment tab
+# 6. Click "Apply" to deploy
+#
+# Option 2: Manual Deployment (if you prefer)
+# --------------------------------------------
+# 1. In Render dashboard, click "New +" → "Web Service"
+# 2. Connect your GitHub/GitLab repository
+# 3. Configure:
+#    - Name: linkedin-extension-backend
+#    - Runtime: Node
+#    - Build Command: npm install
+#    - Start Command: npm start
+#    - Environment: Add OPENROUTER_API_KEY, API_SECRET, NODE_ENV=production
+# 4. Click "Create Web Service"
+#
+# ============================================================================

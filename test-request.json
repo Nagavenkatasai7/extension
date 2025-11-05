@@ -1,0 +1,40 @@
+{
+  "targetProfile": {
+    "name": "Test User",
+    "headline": "Software Engineer at Google",
+    "company": "Google",
+    "location": "San Francisco",
+    "about": "Passionate about AI and machine learning",
+    "experience": [
+      {
+        "title": "Software Engineer",
+        "company": "Google",
+        "duration": "2020-Present",
+        "description": "Working on AI systems"
+      }
+    ],
+    "education": [
+      {
+        "school": "Stanford",
+        "degree": "BS",
+        "field": "Computer Science",
+        "duration": "2016-2020"
+      }
+    ],
+    "skills": ["Python", "Machine Learning", "AI"]
+  },
+  "userProfile": {
+    "name": "Naga Venkata Sai Chennu",
+    "email": "nchennu@gmu.edu",
+    "currentRole": "Graduate Research Assistant",
+    "status": "MS CS @ GMU, graduating May 2025",
+    "graduationDate": "May 2025",
+    "lookingFor": "Full-time AI Engineering roles",
+    "topSkills": ["Prompt Engineering", "Python", "LangChain"],
+    "keyProjects": ["ASL detection system (92% accuracy)"],
+    "recentExperience": ["Graduate Research Assistant at GMU"],
+    "education": "MS Computer Science @ George Mason University",
+    "valueProps": ["Strong technical skills in prompt engineering"]
+  },
+  "template": "Hi, I came across your profile at [COMPANY] and am interested in [AREAS_OF_INTEREST]. I'm pursuing my Master's in Computer Science at George Mason University.\n\nBest regards,\nNaga Venkata Sai Chennu"
+}

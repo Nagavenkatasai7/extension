@@ -1,0 +1,38 @@
+{
+  "targetProfile": {
+    "name": "Karen Chapman",
+    "headline": "Senior Recruiter",
+    "company": "RCG, Inc.",
+    "location": "Washington DC",
+    "about": "Experienced recruiter with 17 years of experience",
+    "experience": [
+      {
+        "title": "Lead Recruiter",
+        "company": "RCG, Inc.",
+        "duration": "2020-Present",
+        "description": "Leading recruitment"
+      }
+    ],
+    "education": [],
+    "skills": ["Recruiting", "HR"],
+    "certifications": [{"name": "PHR", "issuer": "HRCI", "date": "2020"}],
+    "projects": [],
+    "recommendations": [{"text": "Great recruiter", "author": "John Doe"}],
+    "interests": ["Talent Management"],
+    "languages": []
+  },
+  "userProfile": {
+    "name": "Naga Venkata Sai Chennu",
+    "email": "nchennu@gmu.edu",
+    "currentRole": "Graduate Research Assistant at George Mason University",
+    "status": "MS CS @ GMU, graduating May 2025",
+    "graduationDate": "May 2025",
+    "lookingFor": "Full-time AI Engineering roles",
+    "topSkills": ["Python", "AI", "ML"],
+    "keyProjects": ["ASL Detection System"],
+    "recentExperience": ["Research Assistant at GMU"],
+    "education": "MS CS @ GMU",
+    "valueProps": ["Strong AI skills"]
+  },
+  "template": "I came across your profile on LinkedIn and was really interested in the innovative work your team at [COMPANY] is doing. I believe my skills align well with your team goals and would love to connect."
+}

@@ -1,0 +1,36 @@
+<svg width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad128" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A66C2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0077B5;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="128" height="128" fill="url(#grad128)" rx="20"/>
+
+  <!-- Message bubble with shadow -->
+  <path d="M 26 40 Q 26 32 34 32 L 88 32 Q 96 32 96 40 L 96 72 Q 96 80 88 80 L 56 80 L 38 98 L 38 80 L 34 80 Q 26 80 26 72 Z"
+        fill="white" opacity="0.95" filter="url(#shadow)"/>
+
+  <!-- Message lines (representing text) -->
+  <rect x="38" y="46" width="30" height="3" rx="1.5" fill="#0A66C2" opacity="0.3"/>
+  <rect x="38" y="54" width="44" height="3" rx="1.5" fill="#0A66C2" opacity="0.3"/>
+  <rect x="38" y="62" width="36" height="3" rx="1.5" fill="#0A66C2" opacity="0.3"/>
+
+  <!-- AI sparkle dots (orange to represent AI) -->
+  <circle cx="46" cy="56" r="4.5" fill="#FFA500"/>
+  <circle cx="64" cy="56" r="4.5" fill="#FFA500"/>
+  <circle cx="76" cy="56" r="4.5" fill="#FFA500"/>
+
+  <!-- Decorative AI sparkles around the bubble -->
+  <circle cx="102" cy="26" r="3" fill="#FFD700" opacity="0.9"/>
+  <polygon points="108,36 109.5,40 113,41 109.5,42 108,46 106.5,42 103,41 106.5,40" fill="#FFD700" opacity="0.9"/>
+  <circle cx="22" cy="28" r="2.5" fill="#FFD700" opacity="0.8"/>
+  <polygon points="18,88 19,91 22,92 19,93 18,96 17,93 14,92 17,91" fill="#FFD700" opacity="0.8"/>
+
+  <!-- Small accent star -->
+  <polygon points="100,78 101,81 104,82 101,83 100,86 99,83 96,82 99,81" fill="#FFFFFF" opacity="0.7"/>
+</svg>

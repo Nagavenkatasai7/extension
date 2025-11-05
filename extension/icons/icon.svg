@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Background -->
+  <rect width="128" height="128" rx="20" fill="#0A66C2"/>
+
+  <!-- LinkedIn-style icon -->
+  <g fill="white">
+    <!-- "in" letters -->
+    <rect x="28" y="52" width="10" height="50" rx="2"/>
+    <rect x="48" y="52" width="10" height="50" rx="2"/>
+    <path d="M48 62 L48 52 Q48 48 52 48 L58 48 Q68 48 68 58 L68 102 L58 102 L58 62 Q58 58 52 58 Z"/>
+
+    <!-- AI spark -->
+    <circle cx="90" cy="35" r="8" fill="#00D4FF" opacity="0.8"/>
+    <circle cx="105" cy="35" r="5" fill="#00D4FF" opacity="0.6"/>
+    <circle cx="90" cy="48" r="4" fill="#00D4FF" opacity="0.5"/>
+  </g>
+</svg>
