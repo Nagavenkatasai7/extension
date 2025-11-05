@@ -208,7 +208,7 @@ Your extension has been thoroughly audited and is **production-ready** with stro
 
 **Current API Key:**
 ```
-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
+YOUR_OPENROUTER_API_KEY_HERE
 ```
 
 **Potential Impact:**
