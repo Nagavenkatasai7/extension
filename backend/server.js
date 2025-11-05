@@ -13,6 +13,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ============================================================================
+// TRUST PROXY - Required for Render.com and other cloud platforms
+// ============================================================================
+// Render.com uses a reverse proxy, so we need to trust the X-Forwarded-* headers
+// This enables proper rate limiting and IP detection
+app.set('trust proxy', 1);
+
+// ============================================================================
 // CACHING LAYER - Performance Optimization
 // ============================================================================
 
