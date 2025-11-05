@@ -75,15 +75,15 @@ async function loadSettings() {
     const result = await chrome.storage.local.get(['apiUrl', 'apiSecret', 'template']);
 
     return {
-      apiUrl: result.apiUrl || 'http://localhost:3000',
-      apiSecret: result.apiSecret || 'your_secret_key_for_additional_security',
+      apiUrl: result.apiUrl || CONFIG.API_BASE_URL,
+      apiSecret: result.apiSecret || CONFIG.API_SECRET_KEY,
       template: result.template || getDefaultTemplate()
     };
   } catch (error) {
     console.error('Error loading settings:', error);
     return {
-      apiUrl: 'http://localhost:3000',
-      apiSecret: 'your_secret_key_for_additional_security',
+      apiUrl: CONFIG.API_BASE_URL,
+      apiSecret: CONFIG.API_SECRET_KEY,
       template: getDefaultTemplate()
     };
   }
